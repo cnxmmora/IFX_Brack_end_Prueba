@@ -45,6 +45,7 @@ Dependencias clave usadas en la app:
 - API HTTP: `PORT` (por defecto `4000`).
 - Socket.IO: comparte el mismo puerto HTTP de Nest (ejemplo: `http://localhost:4000`).
 - CORS permitido por `CORS_ORIGINS` (lista separada por comas).
+- Producción actual: `https://ifx-front-end-prueba.onrender.com`.
 
 ## Variables de entorno
 

@@ -8,7 +8,7 @@ export const config = {
   nodeEnv: process.env.NODE_ENV ?? 'development',
   isProduction: process.env.NODE_ENV === 'production',
   corsOrigins: (
-    process.env.CORS_ORIGINS ?? 'http://localhost:5173,http://localhost:3000,http://localhost:8080'
+    process.env.CORS_ORIGINS ?? 'http://localhost:5173,http://localhost:3000,http://localhost:8080,https://ifx-front-end-prueba.onrender.com'
   )
     .split(',')
     .map((s) => s.trim())
