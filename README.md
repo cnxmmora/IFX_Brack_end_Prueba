@@ -232,3 +232,16 @@ Al iniciar, se insertan si no existen:
 - El registro de administradores depende de `VM_ADMIN_SIGNUP_KEY`.
 - Si cambias variables en `.env`, reinicia el servidor.
 - `OPTIONS` con `204` en navegador es normal (preflight CORS).
+
+
+## Bitacora de IA
+
+
+Los problemas mas complejos no fueron de arquitectura sino de validaciones y algunos bugs de sisntaxys
+Una vez creada lzas tablas, le pase las rutas para que reemplazara las que ya habia hecho con esa y ajustara validaciones para el CRUD ademas de mirar si todas las variables estaban bien hechas, en la platilla de node, tome partes de proyectos en los que he trabajado antes para ir contruyendo las peticiones, incluyendo aquellas que son de Twilio y SMS
+
+Yo trabaje con una plantilla de NODE JS primero en un INDEX antes de hacer toda la migracion a NEST, con ello el PROMPT fue asi
+
+"Tengo este proyecto de Node con estas tecnoligias aplicadas, nesecito que revises las tablas creadas para un proyecto de Maquinas Virtuales, ayudame a revisar, corregir y crear estas rutas, con base las que ya tengo y mira si hace falta alguna, manten el formato que ya tengo, y no borres el keep alive, ademas toma el archivo de integracion de Twilio y dejalo como endpoint para hacer las peticiones al servicio de SMS"
+
+Tambie tuve que borrar cosas que no nesecitaba, pero deje el sistema que mantiene el servicio despierto "keep alive", esto fue para el back
