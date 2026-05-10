@@ -62,10 +62,17 @@ export class AuthService {
   }
 
   getCookieOptions() {
+    // In cross-origin deployments, SameSite=None + Secure is required
+    // for browsers to send cookies with frontend XHR/fetch requests.
+    const hasNonLocalOrigin = config.corsOrigins.some(
+      (origin) => !origin.includes('localhost') && !origin.includes('127.0.0.1')
+    );
+    const useCrossSiteCookie = config.isProduction || hasNonLocalOrigin;
+
     return {
       httpOnly: true,
-      sameSite: config.isProduction ? ('none' as const) : ('lax' as const),
-      secure: config.isProduction,
+      sameSite: useCrossSiteCookie ? ('none' as const) : ('lax' as const),
+      secure: useCrossSiteCookie,
       path: '/',
       maxAge: 7 * 24 * 60 * 60 * 1000,
     };
